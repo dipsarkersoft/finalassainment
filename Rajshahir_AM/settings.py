@@ -8,6 +8,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 env = environ.Env()
 environ.Env.read_env()
 SECRET_KEY= env('S_KEY')
+DATA_PASS= env('DATABASE_PASS')
+DATA_USER= env('DATABASE_USER')
 
 DEBUG = True
 
@@ -126,8 +128,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
-        'USER': 'postgres.byfudbpuumxkiboivmdg',
-        'PASSWORD': 'arGrnPJPKs0RCWCq',
+        'USER':DATA_USER,
+        'PASSWORD':DATA_PASS,
         'HOST': 'aws-0-us-west-1.pooler.supabase.com',
         'PORT': '6543'
     }
